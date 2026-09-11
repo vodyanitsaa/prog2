@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    char regi[8], uj[8], cmd[64];
+
+    for (int i = 1; i < 100; ++i) {
+        sprintf(regi, "%02d", i);
+        sprintf(uj, "%02d", i + 1);
+
+        if (rename(regi, uj) == 0) {
+            printf("%s -> %s\n", regi, uj);
+            return 0;
+        }
+    }
+
+    int kezdo = (argc > 1) ? atoi(argv[1]) : 1;
+    sprintf(cmd, "mkdir %02d", kezdo);
+    system(cmd);
+    printf("Létrehozva: %02d\n", kezdo);
+
+    return 0;
+}

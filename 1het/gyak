@@ -1,0 +1,27 @@
+public class gyak {
+    public static void main(String[] args) {
+        int osszeg1 = 0;
+
+        for (int i = 1; i < 1000; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                osszeg1 = osszeg1 + i;
+            }
+        }
+
+        System.out.println("1. feladat eredménye: " + osszeg1);
+
+
+        int osszeg2 = 0;
+        int negyzetekOsszege = 0;
+
+        for (int i = 1; i <= 100; i++) {
+            osszeg2 = osszeg2 + i;
+            negyzetekOsszege = negyzetekOsszege + (i * i);
+        }
+
+        int osszegNegyzete = osszeg2 * osszeg2;
+        int kulonbseg = osszegNegyzete - negyzetekOsszege;
+
+        System.out.println("2. feladat eredménye (különbség): " + kulonbseg);
+    }
+}

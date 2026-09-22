@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Hazi
+{
+    public static void main(String[] args)
+    {
+        String game = "Fallout: New Vegas";
+        String out = game.substring(4,7);
+        String New = game.substring(9,12);
+        String Vegas = game.substring(13,18);
+        
+        System.out.println(out);
+        System.out.println(New);
+        System.out.println(Vegas);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Kérek 2 számot!: ");
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        a += b;
+        String osszeg = String.format("Az összegük: %d", a);
+        System.out.println(osszeg);
+
+        System.out.println("Mi a neved?");
+        String name = scanner.nextLine();
+        String greeting = String.format("Hello %s!", name);
+        System.out.println(greeting);
+    }
+}

@@ -105,7 +105,7 @@ public class Hazi2
         scanner.nextLine();
 
         System.out.println("Kérem a kör sugarát: ");
-        int r = scanner.nextInt();
+        double r = scanner.nextDouble();
 
         Circle circle = new Circle(r);
 
@@ -118,7 +118,7 @@ public class Hazi2
         scanner.nextLine();
 
         System.out.println("Kérem a gömb sugarát: ");
-        int gr = scanner.nextInt();
+        double gr = scanner.nextDouble();
 
         Gomb gomb = new Gomb(gr);
 

@@ -1,53 +1,37 @@
 public class Sztringek1
 {
     // A. donuts
-    // Bemenet: egy egész szám (a fánkok száma).
-    // Adjunk vissza egy sztringet a köv. formában: 'Fánkok száma: <count>',
-    // ahol <count> a bemenetként kapott érték.
-    // Viszont ha a fánkok száma 10 vagy több, akkor a tényleges szám helyett
-    // a 'sok' szót használjuk.
-    // Vagyis donuts(5) visszatérési értéke 'Fánkok száma: 5', míg
-    // donuts(23) visszatérési értéke 'Fánkok száma: sok'
     static String donuts(int n)
     {
-        return "";
+        if (n >= 10) {
+            return "Fánkok száma: sok";
+        }
+        return "Fánkok száma: " + n;
     }
 
     // B. both_ends
-    // Egy adott s sztring esetén adjunk vissza egy olyan sztringet,
-    // mely az eredeti sztring első 2 és utolsó 2 karakteréből áll.
-    // Vagyis 'spring' esetén a visszatérési érték 'spng'.
-    // Ha az input sztring hossza 2-nél rövidebb, akkor egy üres
-    // sztringet adjunk vissza.
     static String bothEnds(String s)
     {
-        return "";
+        if (s.length() < 2) {
+            return "";
+        }
+        return s.substring(0, 2) + s.substring(s.length() - 2);
     }
 
     // C. fix_start
-    // Egy adott s sztring esetén adjunk vissza egy olyan sztringet,
-    // melyben az első karakter összes előfordulása helyén egy '*'
-    // szerepel, kivéve a legelső pozíciót.
-    // Példa: 'babble' => 'ba**le'
-    // Feltételezhetjük, hogy a bemeneti sztring hossza legalább 1.
-    // Tipp: s.replace(stra, strb) egy olyan sztringet ad vissza,
-    // melyben az stra összes előfordulása ki van cserélve strb-re.
     static String fixStart(String s)
     {
-        return "";
+        char firstChar = s.charAt(0);
+        String rest = s.substring(1).replace(String.valueOf(firstChar), "*");
+        return firstChar + rest;
     }
 
     // D. mixUp
-    // Adott két bemeneti sztring, a és b. Adjunk vissza egyetlen sztringet,
-    // melyben a és b konkatenálva van úgy, hogy köztük egyetlen szóköz szerepel.
-    // Ezen túl cseréljük fel a két sztring első két karakterét az eredményben.
-    // Példa:
-    //   'mix', 'pod' -> 'pox mid'
-    //   'dog', 'dinner' -> 'dig donner'
-    // Feltételezhetjük, hogy a bemeneti sztringek hossza legalább 2.
     static String mixUp(String a, String b)
     {
-        return "";
+        String newA = b.substring(0, 2) + a.substring(2);
+        String newB = a.substring(0, 2) + b.substring(2);
+        return newA + " " + newB;
     }
 
     static void test(String got, String expected)

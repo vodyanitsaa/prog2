@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+class Hamming{
+    private String sz1;
+    private String sz2;
+    public Hamming(String szo1, String szo2){
+        this.sz1 = szo1;
+        this.sz2 = szo2;
+    }
+    public int hammingTav(){
+        if(sz1.length() != sz2.length()){
+            return -1;
+        }
+        int hammingSzam = 0;
+        for (int i = 0; i < sz1.length(); i++) {
+            if(sz1.charAt(i) != sz2.charAt(i)){
+                hammingSzam += 1;
+            }
+        }
+        return hammingSzam;
+    }
+}
+
+public class HammingTavolsag{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Kérem a két szót:");
+        String szo1 = scanner.nextLine();
+        String szo2 = scanner.nextLine();
+
+        Hamming hamming = new Hamming(szo1, szo2);
+        int tav = hamming.hammingTav();
+        if(tav < 0){
+            System.out.println("A két szó hossza nem egyezik!");
+        }else{
+            System.out.printf("A két szó Hamming-távolsága: %d\n", tav);
+        }
+    }
+}

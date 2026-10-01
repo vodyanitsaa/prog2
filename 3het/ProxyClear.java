@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class ProxyClear{
+
+    public static String proxyCleaner(String input){
+        return input.replace("\\n", "").replaceAll("\\s+", "");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Proxy:");
+        String proxy = scanner.nextLine();
+
+        System.out.println("Javított proxy: " + proxyCleaner(proxy));
+    }
+}

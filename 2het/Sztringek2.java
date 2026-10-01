@@ -1,0 +1,70 @@
+public class Sztringek2
+{
+    // E. verbing
+    private static String verbing(String s)
+    {
+        if (s.length() < 3) {
+            return s;
+        }
+        if (s.endsWith("ing")) {
+            return s + "ly";
+        }
+        return s + "ing";
+    }
+
+    // F. not_bad
+    private static String notBad(String s)
+    {
+        int notIndex = s.indexOf("not");
+        int badIndex = s.indexOf("bad");
+
+        if (notIndex != -1 && badIndex != -1 && badIndex > notIndex) {
+            // A not előtti rész + "good" + a bad utáni rész (a bad hossza 3 karakter)
+            return s.substring(0, notIndex) + "good" + s.substring(badIndex + 3);
+        }
+
+        return s;
+    }
+
+    // G. front_back
+    private static String frontBack(String a, String b)
+    {
+        int midA = (a.length() + 1) / 2;
+        int midB = (b.length() + 1) / 2;
+
+        String aFront = a.substring(0, midA);
+        String aBack = a.substring(midA);
+
+        String bFront = b.substring(0, midB);
+        String bBack = b.substring(midB);
+
+        return aFront + bFront + aBack + bBack;
+    }
+
+    static void test(String got, String expected)
+    {
+        String prefix = (got.equals(expected) ? " OK " : "  X ");
+        System.out.printf("%s got: %s; expected: %s\n", prefix, got, expected);
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println("verbing");
+        test(verbing("hail"), "hailing");
+        test(verbing("swiming"), "swimingly");
+        test(verbing("do"), "do");
+
+        System.out.println();
+        System.out.println("not_bad");
+        test(notBad("This movie is not so bad"), "This movie is good");
+        test(notBad("This dinner is not that bad!"), "This dinner is good!");
+        test(notBad("This tea is not hot"), "This tea is not hot");
+        test(notBad("It's bad yet not"), "It's bad yet not");
+
+        System.out.println();
+        System.out.println("front_back");
+        test(frontBack("abcd", "xy"), "abxcdy");
+        test(frontBack("abcde", "xyz"), "abcxydez");
+        test(frontBack("Kitten", "Donut"), "KitDontenut");
+    }
+}

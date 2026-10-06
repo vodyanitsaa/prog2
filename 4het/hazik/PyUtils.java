@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PyUtils{
-    public static void main(String[] args) {
+    private PyUtils(){
+        
     }
-
 
     public static List<Integer> range(int a, int b){
         List<Integer> lista1 = new ArrayList<>();

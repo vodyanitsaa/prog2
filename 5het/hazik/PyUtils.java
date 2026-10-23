@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class PyUtils {
-    public PyUtils(){
+    private PyUtils(){
         //nem példányosítható
     }
 

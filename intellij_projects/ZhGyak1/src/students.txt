@@ -1,0 +1,4 @@
+ABC123;Kovacs Bela;5,4,4,5,3
+XYZ789;Nagy Anna;5,5,5,5
+HJ89ZF;Kiss Janos;3,4
+QWE456;Toth Gabor;2,3,2
